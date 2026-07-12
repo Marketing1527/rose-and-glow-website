@@ -30,17 +30,35 @@ export default function Home() {
             style={{ objectFit: 'cover', objectPosition: 'center top' }}
             priority
           />
+
+          {/* LEFT BLEND */}
           <div style={{
-            position: 'absolute', inset: 0,
-            background: 'linear-gradient(to right, rgba(240,213,200,0.2) 0%, transparent 30%)',
-            zIndex: 1
+            position: 'absolute', inset: 0, zIndex: 1,
+            background: 'linear-gradient(to right, var(--cream) 0%, rgba(253,248,245,0.85) 10%, rgba(253,248,245,0.4) 30%, transparent 55%)'
           }} />
-          <div className="hero-floater" style={{ zIndex: 2 }}>
+
+          {/* PINK BLOB bottom right */}
+          <div style={{
+            position: 'absolute',
+            bottom: 0,
+            right: 0,
+            width: '60%',
+            height: '42%',
+            background: 'rgba(232,196,181,0.82)',
+            borderRadius: '55% 0 0 0 / 65% 0 0 0',
+            zIndex: 2,
+            backdropFilter: 'blur(2px)'
+          }} />
+
+          {/* Specialty floater */}
+          <div className="hero-floater" style={{ zIndex: 3 }}>
             <div className="hero-floater-label">Specialty</div>
             <div className="hero-floater-val">Balayage &amp; Color</div>
             <div className="hero-floater-sub">Custom · Handcrafted</div>
           </div>
-          <div className="hero-badge" style={{ zIndex: 2 }}>
+
+          {/* 10+ badge */}
+          <div className="hero-badge" style={{ zIndex: 3 }}>
             <div className="hero-badge-num">10+</div>
             <div className="hero-badge-text">Years of<br />Excellence</div>
           </div>
@@ -54,7 +72,7 @@ export default function Home() {
         <div className="divider-line right" />
       </div>
 
-      {/* QUICK SERVICES PREVIEW */}
+      {/* SERVICES PREVIEW */}
       <section className="services" style={{ paddingBottom: '3rem' }}>
         <div className="section-header">
           <div className="section-tag">What We Offer</div>
@@ -82,7 +100,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* EXPERIENCE STRIP */}
+      {/* EXPERIENCE */}
       <section className="experience">
         <div className="experience-tag">The Rose &amp; Glow Difference</div>
         <h2 className="experience-title">More than a salon —<br />an <em>experience</em></h2>
@@ -134,7 +152,9 @@ export default function Home() {
       {/* BOTTOM CTA */}
       <section style={{ background: 'var(--peach)', padding: '5rem 6rem', textAlign: 'center' }}>
         <div className="section-tag">Ready to Glow?</div>
-        <h2 className="section-title" style={{ marginBottom: '1.5rem' }}>Begin your <em>journey</em> today</h2>
+        <h2 className="section-title" style={{ marginBottom: '1.5rem' }}>
+          Begin your <em>journey</em> today
+        </h2>
         <p style={{ fontSize: '0.85rem', color: 'var(--muted)', marginBottom: '2rem', fontWeight: 300 }}>
           Book your appointment and let us create something beautiful — just for you.
         </p>
