@@ -1,39 +1,54 @@
 'use client'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Image from 'next/image'
 
 export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false)
+  const [scrolled, setScrolled] = useState(false)
+
+  useEffect(() => {
+    const handleScroll = () => setScrolled(window.scrollY > 50)
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
+
+  const scrollTo = (id) => {
+    setMenuOpen(false)
+    setTimeout(() => {
+      document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
+    }, 50)
+  }
 
   return (
     <>
       {/* NAV */}
-      <nav>
-        <Image src="/logo.png" alt="Rose & Glow Hair Salon" width={160} height={54} className="nav-logo" style={{height:'54px',width:'auto'}} />
+      <nav style={{ boxShadow: scrolled ? '0 2px 20px rgba(0,0,0,0.08)' : 'none' }}>
+        <Image src="/logo.png" alt="Rose & Glow Hair Salon" width={160} height={54} className="nav-logo" style={{ height: '54px', width: 'auto' }} />
         <ul className="nav-links">
-          <li><a href="#about">About</a></li>
-          <li><a href="#services">Services</a></li>
-          <li><a href="#testimonials">Reviews</a></li>
-          <li><a href="#booking">Contact</a></li>
+          <li><a href="#about" onClick={(e) => { e.preventDefault(); scrollTo('about') }}>About</a></li>
+          <li><a href="#services" onClick={(e) => { e.preventDefault(); scrollTo('services') }}>Services</a></li>
+          <li><a href="#testimonials" onClick={(e) => { e.preventDefault(); scrollTo('testimonials') }}>Reviews</a></li>
+          <li><a href="#booking" onClick={(e) => { e.preventDefault(); scrollTo('booking') }}>Contact</a></li>
         </ul>
-        <button className="nav-book">Book Now</button>
-        <button className="hamburger" onClick={() => setMenuOpen(true)} aria-label="Menu">
+        <button className="nav-book" onClick={() => scrollTo('booking')}>Book Now</button>
+        <button className="hamburger" onClick={() => setMenuOpen(true)} aria-label="Open menu">
           <span /><span /><span />
         </button>
       </nav>
 
       {/* MOBILE MENU */}
       <div className={`mobile-menu${menuOpen ? ' open' : ''}`}>
-        <button className="close-btn" onClick={() => setMenuOpen(false)}>&times;</button>
-        <a href="#about" onClick={() => setMenuOpen(false)}>About</a>
-        <a href="#services" onClick={() => setMenuOpen(false)}>Services</a>
-        <a href="#testimonials" onClick={() => setMenuOpen(false)}>Reviews</a>
-        <a href="#booking" onClick={() => setMenuOpen(false)}>Contact</a>
-        <button className="nav-book-mobile">Book Now</button>
+        <button className="close-btn" onClick={() => setMenuOpen(false)} aria-label="Close menu">&times;</button>
+        <Image src="/logo.png" alt="Rose & Glow" width={140} height={48} style={{ height: '48px', width: 'auto', marginBottom: '1rem' }} />
+        <a href="#about" onClick={(e) => { e.preventDefault(); scrollTo('about') }}>About</a>
+        <a href="#services" onClick={(e) => { e.preventDefault(); scrollTo('services') }}>Services</a>
+        <a href="#testimonials" onClick={(e) => { e.preventDefault(); scrollTo('testimonials') }}>Reviews</a>
+        <a href="#booking" onClick={(e) => { e.preventDefault(); scrollTo('booking') }}>Contact</a>
+        <button className="nav-book-mobile" onClick={() => scrollTo('booking')}>Book Now</button>
       </div>
 
       {/* HERO */}
-      <section className="hero">
+      <section className="hero" id="home">
         <div className="hero-left">
           <div className="hero-eyebrow">Luxury Hair Salon</div>
           <h1 className="hero-headline">
@@ -45,8 +60,8 @@ export default function Home() {
             confident, refreshed, and glowing.
           </p>
           <div className="hero-actions">
-            <button className="btn-primary">Book a Session</button>
-            <button className="btn-secondary">View Services</button>
+            <button className="btn-primary" onClick={() => scrollTo('booking')}>Book a Session</button>
+            <button className="btn-secondary" onClick={() => scrollTo('services')}>View Services</button>
           </div>
         </div>
         <div className="hero-right">
@@ -81,7 +96,7 @@ export default function Home() {
             and premium products. We take the time to understand your lifestyle, goals, and
             vision — then bring them to life.
           </p>
-          <Image src="/logo.png" alt="Rose & Glow" width={180} height={60} className="about-logo" style={{width:'180px',height:'auto'}} />
+          <Image src="/logo.png" alt="Rose & Glow" width={180} height={60} className="about-logo" style={{ width: '180px', height: 'auto' }} />
         </div>
         <div className="about-right">
           {[
@@ -131,7 +146,7 @@ export default function Home() {
           From the moment you walk in, every detail is curated for your comfort, confidence,
           and beauty. Premium products and techniques refined over a decade of expertise.
         </p>
-        <button className="btn-light">View Our Story</button>
+        <button className="btn-light" onClick={() => scrollTo('about')}>View Our Story</button>
         <div className="experience-pillars">
           {[
             { name: 'Premium Products', text: 'Only the finest color-safe, professional-grade formulations touch your hair.' },
@@ -213,28 +228,28 @@ export default function Home() {
         <div>
           <div className="footer-col-title">Services</div>
           <ul className="footer-links">
-            <li><a href="#">Balayage</a></li>
-            <li><a href="#">Custom Color</a></li>
-            <li><a href="#">Precision Cuts</a></li>
-            <li><a href="#">Head Spa</a></li>
-            <li><a href="#">Treatments</a></li>
+            <li><a href="#services" onClick={(e) => { e.preventDefault(); scrollTo('services') }}>Balayage</a></li>
+            <li><a href="#services" onClick={(e) => { e.preventDefault(); scrollTo('services') }}>Custom Color</a></li>
+            <li><a href="#services" onClick={(e) => { e.preventDefault(); scrollTo('services') }}>Precision Cuts</a></li>
+            <li><a href="#services" onClick={(e) => { e.preventDefault(); scrollTo('services') }}>Head Spa</a></li>
+            <li><a href="#services" onClick={(e) => { e.preventDefault(); scrollTo('services') }}>Treatments</a></li>
           </ul>
         </div>
         <div>
           <div className="footer-col-title">Studio</div>
           <ul className="footer-links">
-            <li><a href="#">Our Story</a></li>
-            <li><a href="#">Gallery</a></li>
-            <li><a href="#">Pricing</a></li>
-            <li><a href="#">Gift Cards</a></li>
+            <li><a href="#about" onClick={(e) => { e.preventDefault(); scrollTo('about') }}>Our Story</a></li>
+            <li><a href="#testimonials" onClick={(e) => { e.preventDefault(); scrollTo('testimonials') }}>Reviews</a></li>
+            <li><a href="#services" onClick={(e) => { e.preventDefault(); scrollTo('services') }}>Pricing</a></li>
+            <li><a href="#booking" onClick={(e) => { e.preventDefault(); scrollTo('booking') }}>Gift Cards</a></li>
           </ul>
         </div>
         <div>
           <div className="footer-col-title">Contact</div>
           <ul className="footer-links">
-            <li><a href="#">Book Appointment</a></li>
-            <li><a href="#">(555) 000-0000</a></li>
-            <li><a href="#">hello@roseandglow.com</a></li>
+            <li><a href="#booking" onClick={(e) => { e.preventDefault(); scrollTo('booking') }}>Book Appointment</a></li>
+            <li><a href="tel:5550000000">(555) 000-0000</a></li>
+            <li><a href="mailto:hello@roseandglow.com">hello@roseandglow.com</a></li>
             <li><a href="#">Find Us</a></li>
           </ul>
         </div>
