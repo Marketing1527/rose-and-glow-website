@@ -7,13 +7,6 @@ export default function Home() {
       {/* HERO */}
       <section className="hero" id="home">
         <div className="hero-left">
-          <Image
-            src="/logo.png"
-            alt="Rose & Glow Hair Salon"
-            width={200}
-            height={70}
-            style={{ width: '180px', height: 'auto', marginBottom: '2.5rem' }}
-          />
           <div className="hero-eyebrow">Luxury Hair Salon</div>
           <h1 className="hero-headline">
             Where beauty<br />meets <em>artistry</em><br />&amp; intention
@@ -29,8 +22,7 @@ export default function Home() {
           </div>
         </div>
 
-        {/* HERO RIGHT — PHOTO */}
-        <div className="hero-right" style={{ position: 'relative', overflow: 'hidden', background: 'var(--peach)' }}>
+        <div className="hero-right">
           <Image
             src="/hero-image.png"
             alt="Beautiful balayage hair at Rose & Glow salon"
@@ -38,19 +30,16 @@ export default function Home() {
             style={{ objectFit: 'cover', objectPosition: 'center top' }}
             priority
           />
-          {/* Overlay gradient */}
           <div style={{
             position: 'absolute', inset: 0,
-            background: 'linear-gradient(to right, rgba(240,213,200,0.3) 0%, transparent 40%)',
+            background: 'linear-gradient(to right, rgba(240,213,200,0.2) 0%, transparent 30%)',
             zIndex: 1
           }} />
-          {/* Floater */}
           <div className="hero-floater" style={{ zIndex: 2 }}>
             <div className="hero-floater-label">Specialty</div>
             <div className="hero-floater-val">Balayage &amp; Color</div>
             <div className="hero-floater-sub">Custom · Handcrafted</div>
           </div>
-          {/* Badge */}
           <div className="hero-badge" style={{ zIndex: 2 }}>
             <div className="hero-badge-num">10+</div>
             <div className="hero-badge-text">Years of<br />Excellence</div>
