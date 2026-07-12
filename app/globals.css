@@ -38,7 +38,7 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 0.8rem 
 
 /* HERO */
 .hero { min-height: 100vh; display: grid; grid-template-columns: 1fr 1fr; padding-top: 5rem; }
-.hero-left { display: flex; flex-direction: column; justify-content: center; padding: 5rem 4rem 5rem 6rem; }
+.hero-left { display: flex; flex-direction: column; justify-content: center; padding: 5rem 4rem 5rem 6rem; padding-top: 7rem; }
 .hero-eyebrow { font-size: 0.65rem; letter-spacing: 0.35em; text-transform: uppercase; color: var(--gold); margin-bottom: 2rem; display: flex; align-items: center; gap: 1rem; }
 .hero-eyebrow::before { content: ''; display: block; width: 2.5rem; height: 1px; background: var(--gold); }
 .hero-headline { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.8rem, 5vw, 5rem); font-weight: 300; line-height: 1.1; color: var(--dark); margin-bottom: 1.5rem; }
