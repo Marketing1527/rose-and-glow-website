@@ -15,7 +15,7 @@ export default function Reviews() {
   return (
     <>
       {/* PAGE HERO */}
-      <div style={{background:'var(--peach)',padding:'8rem 6rem 5rem',textAlign:'center'}}>
+      <div style={{background:'var(--cream)',padding:'8rem 6rem 5rem',textAlign:'center'}}>
         <div className="section-tag">Client Love</div>
         <h1 className="section-title" style={{fontSize:'3.5rem',marginTop:'1rem'}}>What Our <em>Guests</em> Say</h1>
         <p style={{fontSize:'0.9rem',color:'var(--muted)',maxWidth:'40rem',margin:'1.5rem auto 0',lineHeight:1.9,fontWeight:300}}>
