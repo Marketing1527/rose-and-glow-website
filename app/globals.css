@@ -194,9 +194,9 @@ footer { background: var(--footer-bg); padding: 4rem 6rem; display: grid; grid-t
 
   .hero-right {
     order: 1;
-    height: 55vw;
-    min-height: 240px;
-    max-height: 340px;
+    height: 45vw;
+    min-height: 200px;
+    max-height: 260px;
     width: 100%;
     position: relative;
     display: block;
