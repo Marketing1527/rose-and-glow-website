@@ -22,64 +22,31 @@ export default function Home() {
           </div>
         </div>
 
-       <div className="hero-right">
-  <Image
-    src="/hero-image.png"
-    alt="Beautiful balayage hair at Rose & Glow salon"
-    fill
-    sizes="50vw"
-    style={{ objectFit: 'cover', objectPosition: 'center center' }}
-    priority
-  />
-  <div style={{
-    position: 'absolute', inset: 0, zIndex: 1,
-    background: 'linear-gradient(to right, var(--cream) 0%, rgba(253,248,245,0.7) 8%, rgba(253,248,245,0.2) 25%, transparent 50%)'
-  }} />
-  <div style={{
-    position: 'absolute', bottom: 0, right: 0,
-    width: '60%', height: '42%',
-    background: 'rgba(232,196,181,0.82)',
-    borderRadius: '55% 0 0 0 / 65% 0 0 0',
-    zIndex: 2
-  }} />
-  <div className="hero-floater" style={{ zIndex: 3 }}>
-    <div className="hero-floater-label">Specialty</div>
-    <div className="hero-floater-val">Balayage &amp; Color</div>
-    <div className="hero-floater-sub">Custom · Handcrafted</div>
-  </div>
-  <div className="hero-badge" style={{ zIndex: 3 }}>
-    <div className="hero-badge-num">10+</div>
-    <div className="hero-badge-text">Years of<br />Excellence</div>
-  </div>
-</div>
-
-          {/* LEFT BLEND */}
+        <div className="hero-right">
+          <Image
+            src="/hero-image.png"
+            alt="Beautiful balayage hair at Rose & Glow salon"
+            fill
+            sizes="50vw"
+            style={{ objectFit: 'cover', objectPosition: 'center center' }}
+            priority
+          />
           <div style={{
             position: 'absolute', inset: 0, zIndex: 1,
-            background: 'linear-gradient(to right, var(--cream) 0%, rgba(253,248,245,0.85) 10%, rgba(253,248,245,0.4) 30%, transparent 55%)'
+            background: 'linear-gradient(to right, var(--cream) 0%, rgba(253,248,245,0.7) 8%, rgba(253,248,245,0.2) 25%, transparent 50%)'
           }} />
-
-          {/* PINK BLOB bottom right */}
           <div style={{
-            position: 'absolute',
-            bottom: 0,
-            right: 0,
-            width: '60%',
-            height: '42%',
+            position: 'absolute', bottom: 0, right: 0,
+            width: '60%', height: '42%',
             background: 'rgba(232,196,181,0.82)',
             borderRadius: '55% 0 0 0 / 65% 0 0 0',
-            zIndex: 2,
-            backdropFilter: 'blur(2px)'
+            zIndex: 2
           }} />
-
-          {/* Specialty floater */}
           <div className="hero-floater" style={{ zIndex: 3 }}>
             <div className="hero-floater-label">Specialty</div>
             <div className="hero-floater-val">Balayage &amp; Color</div>
             <div className="hero-floater-sub">Custom · Handcrafted</div>
           </div>
-
-          {/* 10+ badge */}
           <div className="hero-badge" style={{ zIndex: 3 }}>
             <div className="hero-badge-num">10+</div>
             <div className="hero-badge-text">Years of<br />Excellence</div>
