@@ -42,7 +42,7 @@ export default function Home() {
             borderRadius: '55% 0 0 0 / 65% 0 0 0',
             zIndex: 2
           }} />
-          <div className="hero-floater" style={{ zIndex: 3 }}>
+          <div className="hero-floater" style={{ zIndex: 3, left: 'auto', right: '3rem', top: '3rem' }}>
             <div className="hero-floater-label">Specialty</div>
             <div className="hero-floater-val">Balayage &amp; Color</div>
             <div className="hero-floater-sub">Custom · Handcrafted</div>
