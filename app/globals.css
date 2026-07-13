@@ -20,8 +20,8 @@ html { scroll-behavior: smooth; overflow-x: hidden; }
 body { font-family: 'Jost', sans-serif; background: var(--cream); color: var(--text); overflow-x: hidden; min-height: 100%; }
 
 /* NAV */
-nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 0.8rem 3rem; display: flex; justify-content: space-between; align-items: center; background: rgba(253,248,245,0.95); backdrop-filter: blur(8px); border-bottom: 1px solid rgba(201,169,110,0.15); }
-.nav-logo { height: 54px; width: auto; }
+nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 0.4rem 3rem; display: flex; justify-content: space-between; align-items: center; background: rgba(253,248,245,0.95); backdrop-filter: blur(8px); border-bottom: 1px solid rgba(201,169,110,0.15); }
+.nav-logo { height: 64px; width: auto; }
 .nav-links { display: flex; gap: 2.5rem; list-style: none; }
 .nav-links a { font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); text-decoration: none; transition: color 0.3s; }
 .nav-links a:hover { color: var(--rose); }
