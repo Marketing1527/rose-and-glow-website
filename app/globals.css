@@ -55,7 +55,7 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 0.8rem 
 .hero-badge { position: absolute; bottom: 3rem; right: 3rem; width: 7rem; height: 7rem; border: 1px solid var(--gold); border-radius: 50%; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; background: rgba(253,248,245,0.6); }
 .hero-badge-num { font-family: 'Cormorant Garamond', serif; font-size: 2rem; font-weight: 300; color: var(--dark); line-height: 1; }
 .hero-badge-text { font-size: 0.55rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); margin-top: 0.2rem; }
-.hero-floater { position: absolute; top: 3rem; left: 3rem; background: rgba(253,248,245,0.9); padding: 1.2rem 1.5rem; border-left: 2px solid var(--rose); }
+.hero-floater { position: absolute; top: 3rem; right: 3rem; background: rgba(253,248,245,0.9); padding: 1.2rem 1.5rem; border-left: 2px solid var(--rose); }
 .hero-floater-label { font-size: 0.6rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted); margin-bottom: 0.3rem; }
 .hero-floater-val { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; font-weight: 300; color: var(--dark); }
 .hero-floater-sub { font-size: 0.65rem; color: var(--rose); letter-spacing: 0.1em; }
