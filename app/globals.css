@@ -96,7 +96,7 @@ section { padding: 5rem 6rem; }
 
 /* EXPERIENCE — gradient from cream to peach pink */
 .experience {
-  background: linear-gradient(160deg, var(--cream) 0%, var(--rose-light) 40%, var(--peach) 100%);
+  background: var(--cream);
   padding: 5rem 6rem;
   text-align: center;
 }
