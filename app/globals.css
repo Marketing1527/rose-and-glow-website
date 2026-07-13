@@ -38,8 +38,8 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 0.8rem 
 .nav-book-mobile { font-size: 0.8rem; letter-spacing: 0.2em; text-transform: uppercase; background: var(--rose-deep); color: var(--cream); padding: 1rem 2.5rem; border: none; cursor: pointer; font-family: 'Jost', sans-serif; margin-top: 1rem; text-decoration: none; }
 
 /* HERO */
-.hero { min-height: 92vh; display: grid; grid-template-columns: 1fr 1fr; padding-top: 4.5rem; }
-.hero-left { display: flex; flex-direction: column; justify-content: center; padding: 3rem 4rem 3rem 6rem; }
+.hero { height: 91vh; display: grid; grid-template-columns: 1fr 1fr; padding-top: 4.5rem; }
+.hero-left { display: flex; flex-direction: column; justify-content: center; padding: 2rem 4rem 2rem 6rem; overflow: visible; }
 .hero-right { position: relative; overflow: hidden; background: var(--peach); }
 .hero-eyebrow { font-size: 0.65rem; letter-spacing: 0.35em; text-transform: uppercase; color: var(--gold); margin-bottom: 2rem; display: flex; align-items: center; gap: 1rem; }
 .hero-eyebrow::before { content: ''; display: block; width: 2.5rem; height: 1px; background: var(--gold); }
