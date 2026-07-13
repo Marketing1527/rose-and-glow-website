@@ -49,7 +49,7 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 0.8rem 
 .btn-primary { font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase; background: var(--rose-deep); color: var(--cream); padding: 1rem 2.5rem; border: none; cursor: pointer; font-family: 'Jost', sans-serif; transition: all 0.3s; text-decoration: none; display: inline-block; }
 .btn-primary:hover { background: var(--dark); }
 .btn-secondary { font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--rose); font-family: 'Jost', sans-serif; cursor: pointer; border: none; background: none; border-bottom: 1px solid var(--rose); padding-bottom: 2px; text-decoration: none; display: inline-block; }
-.hero-right { position: relative; overflow: hidden; background: var(--peach); min-height: 600px; }
+.hero-right { position: relative; overflow: hidden; background: var(--peach); min-height: 600px; width: 100%; }
 .hero-logo-big { display: none; }
 .hero-badge { position: absolute; bottom: 3rem; right: 3rem; width: 7rem; height: 7rem; border: 1px solid var(--gold); border-radius: 50%; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; background: rgba(253,248,245,0.6); }
 .hero-badge-num { font-family: 'Cormorant Garamond', serif; font-size: 2rem; font-weight: 300; color: var(--dark); line-height: 1; }
