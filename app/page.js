@@ -22,7 +22,7 @@ export default function Home() {
           </div>
         </div>
 
-        <div style={{ position: 'relative', overflow: 'hidden', background: 'var(--peach)' }}>
+        <div className="hero-right">
           <Image
             src="/hero-image.png"
             alt="Beautiful balayage hair at Rose & Glow salon"
