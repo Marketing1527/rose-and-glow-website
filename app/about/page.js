@@ -7,7 +7,7 @@ export default function About() {
   return (
     <>
       {/* PAGE HERO */}
-      <div className="page-hero" style={{background:'var(--peach)',padding:'8rem 6rem 5rem',textAlign:'center'}}>
+      <div className="page-hero" style={{background:'var(--cream)',padding:'8rem 6rem 5rem',textAlign:'center'}}>
         <div className="section-tag">Our Story</div>
         <h1 className="section-title" style={{fontSize:'3.5rem',marginTop:'1rem'}}>About <em>Rose &amp; Glow</em></h1>
         <p style={{fontSize:'0.9rem',color:'var(--muted)',maxWidth:'40rem',margin:'1.5rem auto 0',lineHeight:1.9,fontWeight:300}}>
