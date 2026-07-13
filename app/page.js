@@ -22,7 +22,7 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="hero-right">
+        <div style={{ position: 'relative', overflow: 'hidden', background: 'var(--peach)' }}>
           <Image
             src="/hero-image.png"
             alt="Beautiful balayage hair at Rose & Glow salon"
@@ -33,7 +33,7 @@ export default function Home() {
           />
           <div style={{
             position: 'absolute', inset: 0, zIndex: 1,
-            background: 'linear-gradient(to right, var(--cream) 0%, rgba(253,248,245,0.7) 8%, rgba(253,248,245,0.2) 25%, transparent 50%)'
+            background: 'linear-gradient(to right, var(--cream) 0%, rgba(253,248,245,0.6) 8%, rgba(253,248,245,0.1) 25%, transparent 50%)'
           }} />
           <div style={{
             position: 'absolute', bottom: 0, right: 0,
