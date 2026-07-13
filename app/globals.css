@@ -24,7 +24,7 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 0.8rem 
 .nav-links { display: flex; gap: 2.5rem; list-style: none; }
 .nav-links a { font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); text-decoration: none; transition: color 0.3s; }
 .nav-links a:hover { color: var(--rose); }
-.nav-book { font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase; background: var(--rose-deep); color: var(--cream); padding: 0.65rem 1.6rem; border: none; cursor: pointer; font-family: 'Jost', sans-serif; transition: background 0.3s; }
+.nav-book { font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase; background: var(--rose-deep); color: var(--cream); padding: 0.65rem 1.6rem; border: none; cursor: pointer; font-family: 'Jost', sans-serif; transition: background 0.3s; text-decoration: none; display: inline-block; }
 .nav-book:hover { background: var(--dark); }
 .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 4px; }
 .hamburger span { display: block; width: 24px; height: 2px; background: var(--dark); }
@@ -34,7 +34,7 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 0.8rem 
 .mobile-menu.open { display: flex; }
 .mobile-menu a { font-size: 1.2rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--text); text-decoration: none; }
 .close-btn { position: absolute; top: 1.5rem; right: 1.5rem; background: none; border: none; font-size: 1.8rem; cursor: pointer; color: var(--dark); }
-.nav-book-mobile { font-size: 0.8rem; letter-spacing: 0.2em; text-transform: uppercase; background: var(--rose-deep); color: var(--cream); padding: 1rem 2.5rem; border: none; cursor: pointer; font-family: 'Jost', sans-serif; margin-top: 1rem; }
+.nav-book-mobile { font-size: 0.8rem; letter-spacing: 0.2em; text-transform: uppercase; background: var(--rose-deep); color: var(--cream); padding: 1rem 2.5rem; border: none; cursor: pointer; font-family: 'Jost', sans-serif; margin-top: 1rem; text-decoration: none; }
 
 /* HERO */
 .hero { height: 100vh; display: grid; grid-template-columns: 1fr 1fr; padding-top: 4.5rem; }
@@ -45,9 +45,9 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 0.8rem 
 .hero-headline em { font-style: italic; color: var(--rose); }
 .hero-sub { font-size: 0.85rem; line-height: 1.9; color: var(--muted); max-width: 32rem; font-weight: 300; margin-bottom: 3rem; }
 .hero-actions { display: flex; gap: 1.5rem; align-items: center; flex-wrap: wrap; }
-.btn-primary { font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase; background: var(--rose-deep); color: var(--cream); padding: 1rem 2.5rem; border: none; cursor: pointer; font-family: 'Jost', sans-serif; transition: all 0.3s; }
+.btn-primary { font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase; background: var(--rose-deep); color: var(--cream); padding: 1rem 2.5rem; border: none; cursor: pointer; font-family: 'Jost', sans-serif; transition: all 0.3s; text-decoration: none; display: inline-block; }
 .btn-primary:hover { background: var(--dark); }
-.btn-secondary { font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--rose); font-family: 'Jost', sans-serif; cursor: pointer; border: none; background: none; border-bottom: 1px solid var(--rose); padding-bottom: 2px; }
+.btn-secondary { font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--rose); font-family: 'Jost', sans-serif; cursor: pointer; border: none; background: none; border-bottom: 1px solid var(--rose); padding-bottom: 2px; text-decoration: none; display: inline-block; }
 .hero-right { position: relative; overflow: hidden; background: var(--peach); min-height: 600px; }
 .hero-logo-big { width: 78%; max-width: 460px; display: none; }
 .hero-badge { position: absolute; bottom: 3rem; right: 3rem; width: 7rem; height: 7rem; border: 1px solid var(--gold); border-radius: 50%; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; background: rgba(253,248,245,0.6); }
@@ -98,14 +98,14 @@ section { padding: 5rem 6rem; }
 .experience-tag { font-size: 0.62rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.5rem; }
 .experience-title { font-family: 'Cormorant Garamond', serif; font-size: 3.5rem; font-weight: 300; color: var(--cream); line-height: 1.2; margin-bottom: 1.5rem; }
 .experience-title em { font-style: italic; color: var(--blush); }
-.experience-body { font-size: 0.85rem; line-height: 1.9; color: rgba(253,248,245,0.55); font-weight: 300; max-width: 40rem; margin: 0 auto 3rem; }
-.experience-pillars { display: flex; justify-content: center; margin-top: 4rem; border: 1px solid rgba(201,169,110,0.2); }
-.pillar { padding: 2.5rem 3rem; border-right: 1px solid rgba(201,169,110,0.2); flex: 1; }
+.experience-body { font-size: 0.85rem; line-height: 1.9; color: rgba(253,248,245,0.65); font-weight: 300; max-width: 40rem; margin: 0 auto 3rem; }
+.experience-pillars { display: flex; justify-content: center; margin-top: 4rem; border: 1px solid rgba(201,169,110,0.25); }
+.pillar { padding: 2.5rem 3rem; border-right: 1px solid rgba(201,169,110,0.25); flex: 1; }
 .pillar:last-child { border-right: none; }
 .pillar-icon { font-size: 1.2rem; color: var(--gold); margin-bottom: 1rem; }
 .pillar-name { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; color: var(--cream); font-weight: 300; margin-bottom: 0.5rem; }
-.pillar-text { font-size: 0.75rem; color: rgba(253,248,245,0.45); line-height: 1.7; font-weight: 300; }
-.btn-light { font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase; background: transparent; color: var(--cream); padding: 1rem 2.5rem; border: 1px solid rgba(201,169,110,0.4); cursor: pointer; font-family: 'Jost', sans-serif; transition: all 0.3s; }
+.pillar-text { font-size: 0.75rem; color: rgba(253,248,245,0.5); line-height: 1.7; font-weight: 300; }
+.btn-light { font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase; background: transparent; color: var(--cream); padding: 1rem 2.5rem; border: 1px solid rgba(201,169,110,0.5); cursor: pointer; font-family: 'Jost', sans-serif; transition: all 0.3s; text-decoration: none; display: inline-block; }
 .btn-light:hover { border-color: var(--gold); color: var(--gold); }
 
 /* TESTIMONIALS */
@@ -148,6 +148,9 @@ footer { background: var(--dark); padding: 4rem 6rem; display: grid; grid-templa
 .footer-social a { font-size: 0.65rem; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(253,248,245,0.3); text-decoration: none; transition: color 0.3s; }
 .footer-social a:hover { color: var(--blush); }
 
+/* ACTIVE NAV LINK */
+.nav-active { color: var(--rose) !important; border-bottom: 1px solid var(--rose); padding-bottom: 2px; }
+
 /* MOBILE */
 @media(max-width: 768px) {
   nav { padding: 0.8rem 1.5rem; }
@@ -155,22 +158,53 @@ footer { background: var(--dark); padding: 4rem 6rem; display: grid; grid-templa
   .nav-book { display: none; }
   .hamburger { display: flex; }
 
-  .hero { grid-template-columns: 1fr; min-height: auto; padding-top: 4.5rem; }
-  .hero-left { padding: 3rem 1.5rem 2rem; text-align: center; align-items: center; }
+  .hero {
+    grid-template-columns: 1fr;
+    height: auto;
+    min-height: auto;
+    padding-top: 4.5rem;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .hero-left {
+    padding: 2.5rem 1.8rem 2rem;
+    text-align: center;
+    align-items: center;
+    order: 2;
+  }
+
   .hero-eyebrow { justify-content: center; }
   .hero-eyebrow::before { display: none; }
-  .hero-headline { font-size: 2.8rem; }
-  .hero-sub { text-align: center; }
-  .hero-actions { justify-content: center; flex-direction: column; align-items: center; }
-  .btn-primary { width: 100%; text-align: center; }
-  .hero-right { height: 65vw; max-height: 360px; }
-  .hero-logo-big { width: 65%; }
-  .hero-floater { top: 1.5rem; left: 1.5rem; padding: 0.8rem 1rem; }
-  .hero-floater-val { font-size: 1rem; }
-  .hero-badge { width: 5.5rem; height: 5.5rem; bottom: 1.5rem; right: 1.5rem; }
-  .hero-badge-num { font-size: 1.6rem; }
+  .hero-headline { font-size: 2.4rem; }
+  .hero-sub { text-align: center; font-size: 0.82rem; }
 
-  section { padding: 3.5rem 1.5rem; }
+  .hero-actions {
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
+  .btn-primary { width: 100%; text-align: center; padding: 1rem; }
+
+  .hero-right {
+    order: 1;
+    height: 52vw;
+    min-height: 220px;
+    max-height: 320px;
+    width: 100%;
+    position: relative;
+    min-height: unset;
+  }
+
+  .hero-floater { top: 1rem; left: 1rem; padding: 0.7rem 1rem; }
+  .hero-floater-val { font-size: 0.95rem; }
+  .hero-badge { width: 4.5rem; height: 4.5rem; bottom: 1rem; right: 1rem; }
+  .hero-badge-num { font-size: 1.4rem; }
+  .hero-badge-text { font-size: 0.45rem; }
+
+  section { padding: 3rem 1.5rem; }
 
   .about { grid-template-columns: 1fr; gap: 2.5rem; text-align: center; }
   .about-logo { margin: 0 auto; }
@@ -180,9 +214,10 @@ footer { background: var(--dark); padding: 4rem 6rem; display: grid; grid-templa
   .about-title { font-size: 2.2rem; }
 
   .services-grid { grid-template-columns: 1fr; }
+  .service-card { padding: 2rem 1.5rem; }
 
   .experience { padding: 3.5rem 1.5rem; }
-  .experience-title { font-size: 2.4rem; }
+  .experience-title { font-size: 2.2rem; }
   .experience-pillars { flex-direction: column; border: none; }
   .pillar { border-right: none; border-bottom: 1px solid rgba(201,169,110,0.2); padding: 2rem 1.5rem; }
   .pillar:last-child { border-bottom: none; }
@@ -200,19 +235,10 @@ footer { background: var(--dark); padding: 4rem 6rem; display: grid; grid-templa
 }
 
 @media(max-width: 480px) {
-  .hero-headline { font-size: 2.2rem; }
+  .hero-headline { font-size: 2rem; }
+  .hero-right { height: 60vw; max-height: 280px; }
   footer { grid-template-columns: 1fr; }
-  .experience-title { font-size: 2rem; }
-  .section-title { font-size: 2.2rem; }
-  .booking-title { font-size: 2rem; }
-}
-
-/* ACTIVE NAV LINK */
-.nav-active { color: var(--rose) !important; border-bottom: 1px solid var(--rose); padding-bottom: 2px; }
-
-/* PAGE HERO MOBILE */
-@media(max-width: 768px) {
-  .page-hero { padding: 7rem 1.5rem 3rem !important; }
-  div[style*="8rem 6rem"] { padding: 7rem 1.5rem 3rem !important; }
-  section[style*="5rem 6rem"] { padding: 3rem 1.5rem !important; }
+  .experience-title { font-size: 1.9rem; }
+  .section-title { font-size: 2rem; }
+  .booking-title { font-size: 1.9rem; }
 }
