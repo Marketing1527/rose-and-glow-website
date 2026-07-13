@@ -94,7 +94,7 @@ section { padding: 5rem 6rem; }
 .service-price { font-size: 0.7rem; letter-spacing: 0.15em; color: var(--gold); margin-top: 1.2rem; text-transform: uppercase; }
 
 /* EXPERIENCE */
-.experience { background: var(--dark); padding: 5rem 6rem; text-align: center; }
+.experience { background: var(--rose-deep); padding: 5rem 6rem; text-align: center; }
 .experience-tag { font-size: 0.62rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.5rem; }
 .experience-title { font-family: 'Cormorant Garamond', serif; font-size: 3.5rem; font-weight: 300; color: var(--cream); line-height: 1.2; margin-bottom: 1.5rem; }
 .experience-title em { font-style: italic; color: var(--blush); }
