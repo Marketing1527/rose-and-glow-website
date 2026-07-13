@@ -114,9 +114,9 @@ section { padding: 5rem 6rem; }
 .btn-light:hover { border-color: var(--rose); color: var(--rose); background: rgba(253,248,245,0.5); }
 
 /* TESTIMONIALS */
-.testimonials { background: white; padding: 5rem 6rem; }
+.testimonials { background: var(--rose-light); padding: 5rem 6rem; }
 .testimonials-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2.5rem; margin-top: 4rem; }
-.testimonial { padding: 2.5rem; border: 1px solid rgba(168,91,91,0.12); position: relative; }
+.testimonial { background: rgba(253,248,245,0.7); padding: 2.5rem; border: 1px solid rgba(168,91,91,0.12); position: relative; }
 .testimonial::before { content: '\201C'; font-family: 'Cormorant Garamond', serif; font-size: 5rem; color: var(--rose-light); position: absolute; top: -1.5rem; left: 1.5rem; line-height: 1; }
 .testimonial-text { font-family: 'Cormorant Garamond', serif; font-size: 1.05rem; font-style: italic; line-height: 1.8; color: var(--text); margin-bottom: 1.5rem; font-weight: 300; }
 .testimonial-author { font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); }
