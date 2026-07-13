@@ -38,6 +38,7 @@ export default function Footer() {
           </ul>
         </div>
       </footer>
+
       <div className="footer-bottom">
         <div className="footer-copy">© 2025 Rose &amp; Glow Hair Salon. All rights reserved.</div>
         <div style={{ display: 'flex', alignItems: 'center', gap: '2rem' }}>
