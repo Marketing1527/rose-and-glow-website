@@ -24,12 +24,12 @@ export default function Home() {
 
         <div className="hero-right">
           <Image
-            src="/hero-image.png"
-            alt="Beautiful balayage hair at Rose & Glow salon"
-            fill
-            style={{ objectFit: 'cover', objectPosition: 'center top' }}
-            priority
-          />
+  src="/hero-image.png"
+  alt="Beautiful balayage hair at Rose & Glow salon"
+  fill
+  style={{ objectFit: 'cover', objectPosition: '60% top', width: '100%', height: '100%' }}
+  priority
+/>
 
           {/* LEFT BLEND */}
           <div style={{
