@@ -6,7 +6,7 @@ export default function Home() {
     <>
       {/* HERO */}
       <section className="hero" id="home">
-        <div className="hero-left">
+        <div className="hero-left" style={{ order: 2 }}>
           <div className="hero-eyebrow">Luxury Hair Salon</div>
           <h1 className="hero-headline">
             Where beauty<br />meets <em>artistry</em><br />&amp; intention
@@ -22,7 +22,7 @@ export default function Home() {
           </div>
         </div>
 
-        <div style={{ position: 'relative', overflow: 'hidden', background: 'var(--peach)' }}>
+        <div style={{ position: 'relative', overflow: 'hidden', background: 'var(--peach)', order: 1, height: '300px', minHeight: '300px', width: '100%', flexShrink: 0 }}>
           <Image
             src="/hero-image.png"
             alt="Beautiful balayage hair at Rose & Glow salon"
