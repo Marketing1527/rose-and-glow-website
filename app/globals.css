@@ -16,8 +16,8 @@
   --footer-bg: #f5e8e3;
 }
 
-html { scroll-behavior: smooth; }
-body { font-family: 'Jost', sans-serif; background: var(--cream); color: var(--text); overflow-x: hidden; }
+html { scroll-behavior: smooth; overflow-x: hidden; }
+body { font-family: 'Jost', sans-serif; background: var(--cream); color: var(--text); overflow-x: hidden; min-height: 100%; }
 
 /* NAV */
 nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 0.8rem 3rem; display: flex; justify-content: space-between; align-items: center; background: rgba(253,248,245,0.95); backdrop-filter: blur(8px); border-bottom: 1px solid rgba(201,169,110,0.15); }
@@ -167,7 +167,8 @@ footer { background: var(--footer-bg); padding: 4rem 6rem; display: grid; grid-t
   .hero {
     grid-template-columns: 1fr;
     height: auto;
-    min-height: auto;
+    min-height: unset;
+    max-height: unset;
     padding-top: 4.5rem;
     display: flex;
     flex-direction: column;
@@ -247,4 +248,9 @@ footer { background: var(--footer-bg); padding: 4rem 6rem; display: grid; grid-t
   .experience-title { font-size: 1.9rem; }
   .section-title { font-size: 2rem; }
   .booking-title { font-size: 1.9rem; }
+}
+@supports (-webkit-touch-callout: none) {
+  .hero { height: auto; min-height: unset; }
+  body { min-height: -webkit-fill-available; }
+  html { height: -webkit-fill-available; }
 }
