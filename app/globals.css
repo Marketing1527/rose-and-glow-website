@@ -205,7 +205,7 @@ footer { background: var(--footer-bg); padding: 4rem 6rem; display: grid; grid-t
     position: relative;
   }
 
-  .hero-floater { top: 1rem; right: 1rem; left: auto; padding: 0.7rem 1rem; }
+  .hero-floater { top: 1rem; left: 1rem; padding: 0.7rem 1rem; }
   .hero-floater-val { font-size: 0.95rem; }
   .hero-badge { width: 4.5rem; height: 4.5rem; bottom: 1rem; right: 1rem; }
   .hero-badge-num { font-size: 1.4rem; }
