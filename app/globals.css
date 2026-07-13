@@ -38,9 +38,8 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 0.8rem 
 .nav-book-mobile { font-size: 0.8rem; letter-spacing: 0.2em; text-transform: uppercase; background: var(--rose-deep); color: var(--cream); padding: 1rem 2.5rem; border: none; cursor: pointer; font-family: 'Jost', sans-serif; margin-top: 1rem; text-decoration: none; }
 
 /* HERO */
-.hero { height: 91vh; display: grid; grid-template-columns: 1fr 1fr; padding-top: 4.5rem; }
-.hero-left { display: flex; flex-direction: column; justify-content: center; padding: 2rem 4rem 2rem 6rem; overflow: visible; }
-.hero-right { position: relative; overflow: hidden; background: var(--peach); }
+.hero { height: 100vh; display: grid; grid-template-columns: 1fr 1fr; padding-top: 4.5rem; }
+.hero-left { display: flex; flex-direction: column; justify-content: center; padding: 2rem 4rem 2rem 6rem; }
 .hero-eyebrow { font-size: 0.65rem; letter-spacing: 0.35em; text-transform: uppercase; color: var(--gold); margin-bottom: 2rem; display: flex; align-items: center; gap: 1rem; }
 .hero-eyebrow::before { content: ''; display: block; width: 2.5rem; height: 1px; background: var(--gold); }
 .hero-headline { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.8rem, 5vw, 5rem); font-weight: 300; line-height: 1.1; color: var(--dark); margin-bottom: 1.5rem; }
@@ -50,7 +49,7 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 0.8rem 
 .btn-primary { font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase; background: var(--rose-deep); color: var(--cream); padding: 1rem 2.5rem; border: none; cursor: pointer; font-family: 'Jost', sans-serif; transition: all 0.3s; text-decoration: none; display: inline-block; }
 .btn-primary:hover { background: var(--dark); }
 .btn-secondary { font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--rose); font-family: 'Jost', sans-serif; cursor: pointer; border: none; background: none; border-bottom: 1px solid var(--rose); padding-bottom: 2px; text-decoration: none; display: inline-block; }
-.hero-right { position: relative; overflow: hidden; background: var(--peach); min-height: 600px; width: 100%; }
+.hero-right { position: relative; overflow: hidden; background: var(--peach); }
 .hero-logo-big { display: none; }
 .hero-badge { position: absolute; bottom: 3rem; right: 3rem; width: 7rem; height: 7rem; border: 1px solid var(--gold); border-radius: 50%; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; background: rgba(253,248,245,0.6); }
 .hero-badge-num { font-family: 'Cormorant Garamond', serif; font-size: 2rem; font-weight: 300; color: var(--dark); line-height: 1; }
@@ -95,12 +94,8 @@ section { padding: 5rem 6rem; }
 .service-desc { font-size: 0.8rem; line-height: 1.8; color: var(--muted); font-weight: 300; }
 .service-price { font-size: 0.7rem; letter-spacing: 0.15em; color: var(--gold); margin-top: 1.2rem; text-transform: uppercase; }
 
-/* EXPERIENCE — gradient from cream to peach pink */
-.experience {
-  background: var(--cream);
-  padding: 5rem 6rem;
-  text-align: center;
-}
+/* EXPERIENCE */
+.experience { background: var(--cream); padding: 5rem 6rem; text-align: center; }
 .experience-tag { font-size: 0.62rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.5rem; }
 .experience-title { font-family: 'Cormorant Garamond', serif; font-size: 3.5rem; font-weight: 300; color: var(--dark); line-height: 1.2; margin-bottom: 1.5rem; }
 .experience-title em { font-style: italic; color: var(--rose); }
@@ -112,7 +107,7 @@ section { padding: 5rem 6rem; }
 .pillar-name { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; color: var(--dark); font-weight: 300; margin-bottom: 0.5rem; }
 .pillar-text { font-size: 0.75rem; color: var(--muted); line-height: 1.7; font-weight: 300; }
 .btn-light { font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase; background: transparent; color: var(--rose-deep); padding: 1rem 2.5rem; border: 1px solid rgba(168,91,91,0.4); cursor: pointer; font-family: 'Jost', sans-serif; transition: all 0.3s; text-decoration: none; display: inline-block; }
-.btn-light:hover { border-color: var(--rose); color: var(--rose); background: rgba(253,248,245,0.5); }
+.btn-light:hover { border-color: var(--rose); color: var(--rose); }
 
 /* TESTIMONIALS */
 .testimonials { background: var(--rose-light); padding: 5rem 6rem; }
@@ -124,7 +119,7 @@ section { padding: 5rem 6rem; }
 .stars { color: var(--rose); font-size: 0.75rem; margin-bottom: 1rem; letter-spacing: 0.1em; }
 
 /* BOOKING */
-.booking { background: var(--peach); padding: 5rem 6rem; display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
+.booking { background: var(--cream); padding: 5rem 6rem; display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
 .booking-tag { font-size: 0.62rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--rose-deep); margin-bottom: 1rem; }
 .booking-title { font-family: 'Cormorant Garamond', serif; font-size: 3rem; font-weight: 300; color: var(--dark); line-height: 1.2; margin-bottom: 1.5rem; }
 .booking-body { font-size: 0.85rem; line-height: 1.9; color: var(--muted); font-weight: 300; margin-bottom: 2rem; }
@@ -141,7 +136,7 @@ section { padding: 5rem 6rem; }
 .form-submit:hover { background: var(--dark); }
 
 /* FOOTER */
-footer { background: var(--footer-bg); padding: 4rem 6rem; display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr; gap: 4rem; border-top: 1px solid rgba(168,91,91,0.1); } 
+footer { background: var(--footer-bg); padding: 4rem 6rem; display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr; gap: 4rem; border-top: 1px solid rgba(168,91,91,0.1); }
 .footer-logo { width: 150px; margin-bottom: 1rem; }
 .footer-tagline { font-size: 0.75rem; line-height: 1.8; color: var(--muted); font-weight: 300; }
 .footer-col-title { font-size: 0.62rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.5rem; }
@@ -150,6 +145,7 @@ footer { background: var(--footer-bg); padding: 4rem 6rem; display: grid; grid-t
 .footer-links a:hover { color: var(--rose); }
 .footer-bottom { background: var(--footer-bg); padding: 1.5rem 6rem; border-top: 1px solid rgba(168,91,91,0.1); display: flex; justify-content: space-between; align-items: center; }
 .footer-copy { font-size: 0.65rem; color: var(--muted); letter-spacing: 0.1em; }
+.footer-social { display: flex; gap: 1.5rem; }
 .footer-social a { font-size: 0.65rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--muted); text-decoration: none; transition: color 0.3s; }
 .footer-social a:hover { color: var(--rose); }
 .footer-credit { font-size: 0.62rem; letter-spacing: 0.1em; color: var(--muted); text-decoration: none; transition: color 0.3s; font-style: italic; }
@@ -168,8 +164,7 @@ footer { background: var(--footer-bg); padding: 4rem 6rem; display: grid; grid-t
   .hero {
     grid-template-columns: 1fr;
     height: auto;
-    min-height: unset;
-    max-height: unset;
+    min-height: auto;
     padding-top: 4.5rem;
     display: flex;
     flex-direction: column;
@@ -180,6 +175,7 @@ footer { background: var(--footer-bg); padding: 4rem 6rem; display: grid; grid-t
     text-align: center;
     align-items: center;
     order: 2;
+    overflow: visible;
   }
 
   .hero-eyebrow { justify-content: center; }
@@ -198,14 +194,15 @@ footer { background: var(--footer-bg); padding: 4rem 6rem; display: grid; grid-t
 
   .hero-right {
     order: 1;
-    height: 52vw;
-    min-height: 220px;
-    max-height: 320px;
+    height: 55vw;
+    min-height: 240px;
+    max-height: 340px;
     width: 100%;
     position: relative;
+    display: block;
   }
 
-  .hero-floater { top: 1rem; left: 1rem; padding: 0.7rem 1rem; }
+  .hero-floater { top: 1rem; right: 1rem; left: auto; padding: 0.7rem 1rem; }
   .hero-floater-val { font-size: 0.95rem; }
   .hero-badge { width: 4.5rem; height: 4.5rem; bottom: 1rem; right: 1rem; }
   .hero-badge-num { font-size: 1.4rem; }
@@ -244,12 +241,12 @@ footer { background: var(--footer-bg); padding: 4rem 6rem; display: grid; grid-t
 
 @media(max-width: 480px) {
   .hero-headline { font-size: 2rem; }
-  .hero-right { height: 60vw; max-height: 280px; }
   footer { grid-template-columns: 1fr; }
   .experience-title { font-size: 1.9rem; }
   .section-title { font-size: 2rem; }
   .booking-title { font-size: 1.9rem; }
 }
+
 @supports (-webkit-touch-callout: none) {
   .hero { height: auto; min-height: unset; }
   body { min-height: -webkit-fill-available; }
