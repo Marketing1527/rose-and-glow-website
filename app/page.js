@@ -22,7 +22,7 @@ export default function Home() {
           </div>
         </div>
 
-        <div style={{ position: 'relative', overflow: 'hidden', background: 'var(--peach)', order: 1, height: '300px', minHeight: '300px', width: '100%', flexShrink: 0 }}>
+        <div style={{ position: 'relative', overflow: 'hidden', background: 'var(--peach)' }}>
           <Image
             src="/hero-image.png"
             alt="Beautiful balayage hair at Rose & Glow salon"
