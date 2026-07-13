@@ -40,10 +40,20 @@ export default function Footer() {
       </footer>
       <div className="footer-bottom">
         <div className="footer-copy">© 2025 Rose &amp; Glow Hair Salon. All rights reserved.</div>
-        <div className="footer-social">
-          <a href="#">Instagram</a>
-          <a href="#">Facebook</a>
-          <a href="#">TikTok</a>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '2rem' }}>
+          <div className="footer-social">
+            <a href="#">Instagram</a>
+            <a href="#">Facebook</a>
+            <a href="#">TikTok</a>
+          </div>
+          
+            href="https://marketingsvc.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="footer-credit"
+          >
+            Created by Essential Marketing
+          </a>
         </div>
       </div>
     </>
