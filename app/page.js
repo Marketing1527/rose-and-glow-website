@@ -150,7 +150,7 @@ export default function Home() {
       </section>
 
       {/* BOTTOM CTA */}
-      <section style={{ background: 'var(--peach)', padding: '5rem 6rem', textAlign: 'center' }}>
+      <section style={{ background: 'var(--rose-light)', padding: '5rem 6rem', textAlign: 'center' }}>
         <div className="section-tag">Ready to Glow?</div>
         <h2 className="section-title" style={{ marginBottom: '1.5rem' }}>
           Begin your <em>journey</em> today
