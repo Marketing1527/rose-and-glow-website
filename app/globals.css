@@ -218,9 +218,27 @@ footer { background: var(--footer-bg); padding: 4rem 6rem; display: grid; grid-t
   .about-stat-num { font-size: 2.2rem; }
   .about-title { font-size: 2.2rem; }
 
-  .services-grid { grid-template-columns: 1fr; }
-  .service-card-img { height: 180px; }
-.service-card-body { padding: 1.5rem; }
+  .services-grid {
+    display: flex;
+    flex-direction: row;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    gap: 0;
+    background: none;
+    padding-bottom: 1rem;
+  }
+  .services-grid::-webkit-scrollbar { display: none; }
+  .service-card {
+    min-width: 72vw;
+    max-width: 72vw;
+    flex-shrink: 0;
+    scroll-snap-align: start;
+    margin-right: 1px;
+    background: var(--cream);
+  }
+  .service-card-img { height: 200px; }
+  .service-card-body { padding: 1.5rem; }
 
   .experience { padding: 3.5rem 1.5rem; }
   .experience-title { font-size: 2.2rem; }
