@@ -51,7 +51,7 @@ export default function Navbar() {
       <div className={`mobile-menu${menuOpen ? ' open' : ''}`}>
         <button className="close-btn" onClick={() => setMenuOpen(false)} aria-label="Close">&times;</button>
         <Link href="/" onClick={() => setMenuOpen(false)}>
-          <Image src="/logo.png" alt="Rose & Glow" width={140} height={48} style={{ height: '48px', width: 'auto', marginBottom: '1rem' }} />
+          <Image src="/logo.png" alt="Rose & Glow" width={240} height={80} style={{ height: '140px', width: 'auto', marginBottom: '1.5rem' }} />
         </Link>
         {links.map((link) => (
           <Link key={link.href} href={link.href} onClick={() => setMenuOpen(false)}
