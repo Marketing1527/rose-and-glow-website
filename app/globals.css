@@ -89,7 +89,7 @@ section { padding: 5rem 6rem; }
 .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.2rem; background: transparent; }
 .service-card { background: var(--cream); transition: background 0.3s; overflow: hidden; border-radius: 2px; }
 .service-card:hover { background: white; }
-.service-card-img { width: 100%; height: 320px; object-fit: cover; object-position: center 30%; display: block; transition: transform 0.4s ease; }
+.service-card-img { width: 100%; aspect-ratio: 4/5; object-fit: cover; object-position: center center; display: block; transition: transform 0.4s ease; }
 .service-card:hover .service-card-img { transform: scale(1.02); }
 .service-card-body { padding: 1.8rem 2rem; }
 .service-icon { font-size: 1.3rem; color: var(--rose); margin-bottom: 1rem; }
