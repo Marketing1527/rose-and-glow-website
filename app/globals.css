@@ -139,7 +139,7 @@ section { padding: 5rem 6rem; }
 
 /* FOOTER */
 footer { background: var(--footer-bg); padding: 4rem 6rem; display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr; gap: 4rem; border-top: 1px solid rgba(168,91,91,0.1); }
-.footer-logo { width: 150px; margin-bottom: 1rem; }
+.footer-logo { width: 180px; height: auto; margin-bottom: 1rem; }
 .footer-tagline { font-size: 0.75rem; line-height: 1.8; color: var(--muted); font-weight: 300; }
 .footer-col-title { font-size: 0.62rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.5rem; }
 .footer-links { list-style: none; display: flex; flex-direction: column; gap: 0.8rem; }
