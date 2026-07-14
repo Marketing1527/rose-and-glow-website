@@ -15,28 +15,11 @@ export default function RootLayout({ children }) {
         {children}
         <Footer />
 
-        {/* WHATSAPP FLOATING BUTTON */}
         
           href="https://wa.me/17863574958"
           target="_blank"
           rel="noopener noreferrer"
-          style={{
-            position: 'fixed',
-            bottom: '1.5rem',
-            right: '1.5rem',
-            width: '52px',
-            height: '52px',
-            backgroundColor: '#25D366',
-            borderRadius: '50%',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            boxShadow: '0 4px 12px rgba(0,0,0,0.15)',
-            zIndex: 999,
-            transition: 'transform 0.2s',
-          }}
-          onMouseEnter={e => e.currentTarget.style.transform = 'scale(1.1)'}
-          onMouseLeave={e => e.currentTarget.style.transform = 'scale(1)'}
+          className="whatsapp-btn"
           aria-label="Chat on WhatsApp"
         >
           <svg viewBox="0 0 24 24" width="28" height="28" fill="white" xmlns="http://www.w3.org/2000/svg">
