@@ -27,7 +27,7 @@ export default function Navbar() {
     <>
       <nav style={{ boxShadow: scrolled ? '0 2px 20px rgba(0,0,0,0.08)' : 'none' }}>
         <Link href="/">
-          <Image src="/logo.png" alt="Rose & Glow Hair Salon" width={160} height={54} className="nav-logo" style={{ height: '54px', width: 'auto' }} />
+          <Image src="/logo.png" alt="Rose & Glow" width={200} height={70} style={{ height: '100px', width: 'auto', marginBottom: '1.5rem' }} />
         </Link>
         <ul className="nav-links">
           {links.map((link) => (
