@@ -68,22 +68,25 @@ export default function Home() {
           <h2 className="section-title">Our <em>signature</em> services</h2>
         </div>
         <div className="services-grid">
-          {[
-            { name: 'Balayage', desc: 'Hand-painted, sun-kissed color customized for you.', price: 'From $150' },
-            { name: 'Custom Color', desc: 'Professional-grade color crafted uniquely for your tone.', price: 'From $120' },
-            { name: 'Precision Cuts', desc: 'Shaped for your face structure and real-life movement.', price: 'From $65' },
-            { name: 'Restorative Treatments', desc: 'Repair, restore, and strengthen from within.', price: 'From $85' },
-            { name: 'Luxury Head Spa', desc: 'A full sensory scalp and hair wellness experience.', price: 'From $95' },
-            { name: 'Styling & Blowouts', desc: 'Polished, long-lasting styles for any occasion.', price: 'From $55' },
-          ].map((s) => (
-            <div className="service-card" key={s.name}>
-              <div className="service-icon">✦</div>
-              <div className="service-name">{s.name}</div>
-              <p className="service-desc">{s.desc}</p>
-              <div className="service-price">{s.price}</div>
-            </div>
-          ))}
-        </div>
+  {[
+    { name: 'Balayage', img: '/balayage.png', desc: 'Hand-painted, sun-kissed color customized for you.', price: 'From $150' },
+    { name: 'Custom Color', img: '/custom_color.png', desc: 'Professional-grade color crafted uniquely for your tone.', price: 'From $120' },
+    { name: 'Precision Cuts', img: '/Precision_Cut.png', desc: 'Shaped for your face structure and real-life movement.', price: 'From $65' },
+    { name: 'Extensions', img: '/extensions.png', desc: 'Natural-looking extensions for added length, volume, and beauty.', price: 'From $200' },
+    { name: 'Luxury Head Spa', img: '/Luxury_Head_Spa.png', desc: 'A full sensory scalp and hair wellness experience.', price: 'From $95' },
+    { name: 'Styling & Blowouts', img: '/Styling_Blowouts.png', desc: 'Polished, long-lasting styles for any occasion.', price: 'From $55' },
+  ].map((s) => (
+    <div className="service-card" key={s.name}>
+      <img src={s.img} alt={s.name} className="service-card-img" />
+      <div className="service-card-body">
+        <div className="service-icon">✦</div>
+        <div className="service-name">{s.name}</div>
+        <p className="service-desc">{s.desc}</p>
+        <div className="service-price">{s.price}</div>
+      </div>
+    </div>
+  ))}
+</div>
         <div style={{ textAlign: 'center', marginTop: '3rem' }}>
           <Link href="/services" className="btn-primary">View All Services</Link>
         </div>
