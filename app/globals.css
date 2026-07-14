@@ -86,10 +86,11 @@ section { padding: 5rem 6rem; }
 .section-tag { font-size: 0.62rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold); margin-bottom: 1rem; }
 .section-title { font-family: 'Cormorant Garamond', serif; font-size: 3rem; font-weight: 300; color: var(--dark); line-height: 1.2; }
 .section-title em { font-style: italic; color: var(--rose); }
-.services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: rgba(168,91,91,0.1); }
-.service-card { background: var(--cream); transition: background 0.3s; overflow: hidden; }
+.services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.2rem; background: transparent; }
+.service-card { background: var(--cream); transition: background 0.3s; overflow: hidden; border-radius: 2px; }
 .service-card:hover { background: white; }
-.service-card-img { width: 100%; height: 220px; object-fit: cover; display: block; }
+.service-card-img { width: 100%; height: 280px; object-fit: cover; object-position: center 20%; display: block; transition: transform 0.4s ease; }
+.service-card:hover .service-card-img { transform: scale(1.03); }
 .service-card-body { padding: 1.8rem 2rem; }
 .service-icon { font-size: 1.3rem; color: var(--rose); margin-bottom: 1rem; }
 .service-name { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; font-weight: 400; color: var(--dark); margin-bottom: 0.8rem; }
