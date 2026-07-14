@@ -39,7 +39,7 @@ export async function POST(request) {
 
     // Email to salon owners
     await resend.emails.send({
-      from: 'Rose & Glow <onboarding@resend.dev>',
+      from: 'Rose & Glow <hello@roseandglowhair.com>',
       to: ['roseli.peraza09@gmail.com', 'dabdullegacy@gmail.com'],
       subject: `New Appointment Request — ${service}`,
       html: emailTemplate(
