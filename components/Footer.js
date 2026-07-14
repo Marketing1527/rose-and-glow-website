@@ -6,7 +6,7 @@ export default function Footer() {
     <>
       <footer>
         <div>
-          <Image src="/logo.png" alt="Rose & Glow" width={150} height={50} className="footer-logo" />
+          <Image src="/logo.png" alt="Rose & Glow" width={180} height={60} className="footer-logo" style={{ width: '180px', height: 'auto' }} />
           <p className="footer-tagline">A luxury hair salon dedicated to beautiful, healthy hair and personalized care. Every visit leaves you feeling confident and glowing.</p>
         </div>
         <div>
@@ -32,9 +32,9 @@ export default function Footer() {
           <div className="footer-col-title">Contact</div>
           <ul className="footer-links">
             <li><Link href="/contact">Book Appointment</Link></li>
-            <li><a href="tel:5550000000">(555) 000-0000</a></li>
+            <li><a href="tel:17863574958">(786) 357-4958</a></li>
             <li><a href="mailto:hello@roseandglow.com">hello@roseandglow.com</a></li>
-            <li><a href="#">Find Us</a></li>
+            <li><a href="https://maps.google.com/?q=1076+SW+67th+Ave+Suite+201+Miami+FL+33144" target="_blank" rel="noopener noreferrer">1076 SW 67th Ave, Suite 201<br />Miami, FL 33144</a></li>
           </ul>
         </div>
       </footer>
