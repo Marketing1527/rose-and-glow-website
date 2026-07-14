@@ -159,6 +159,7 @@ footer { background: var(--footer-bg); padding: 4rem 6rem; display: grid; grid-t
 /* MOBILE */
 @media(max-width: 768px) {
   nav { padding: 0.8rem 1.5rem; }
+.nav-logo { height: 70px; }
   .nav-links { display: none; }
   .nav-book { display: none; }
   .hamburger { display: flex; }
