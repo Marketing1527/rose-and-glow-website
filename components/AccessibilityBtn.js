@@ -40,7 +40,11 @@ export default function AccessibilityBtn() {
         aria-label="Accessibility Options"
         onClick={() => setOpen(!open)}
       >
-        ♿
+       <svg width="18" height="18" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="12" cy="4" r="2"/>
+        <path d="M12 7c-1.1 0-2 .9-2 2v4l-2 4h2l1.5-3h1l1.5 3h2l-2-4V9c0-1.1-.9-2-2-2z"/>
+        <path d="M8 20c0 1.1.9 2 2 2h4c1.1 0 2-.9 2-2v-2H8v2z"/>
+      </svg>
       </button>
 
       {/* PANEL */}
