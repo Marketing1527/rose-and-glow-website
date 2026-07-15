@@ -14,9 +14,19 @@ export default function RootLayout({ children }) {
         <Navbar />
         {children}
         <Footer />
+
+        {/* WHATSAPP FLOATING BUTTON */}
         <a href="https://wa.me/17863574958" target="_blank" rel="noopener noreferrer" className="whatsapp-btn" aria-label="Chat on WhatsApp">
           <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" width="30" height="30" />
         </a>
+
+        {/* USERWAY ACCESSIBILITY WIDGET */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(d){var s = d.createElement("script");s.setAttribute("data-account", "YOUR_USERWAY_ID");s.setAttribute("src", "https://cdn.userway.org/widget.js");(d.body || d.head).appendChild(s);})(document)`
+          }}
+        />
+
       </body>
     </html>
   )
