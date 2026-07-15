@@ -39,7 +39,7 @@ export default function Footer() {
         </div>
       </footer>
       <div className="footer-bottom">
-        <div className="footer-copy">© 2025 Rose & Glow Hair Salon. All rights reserved.</div>
+        <div className="footer-copy">© 2025 Rose & Glow Hair Salon. All rights reserved. &nbsp;·&nbsp; <a href="/terms" style={{color:'var(--muted)',textDecoration:'none',transition:'color 0.3s'}} onMouseEnter={e=>e.target.style.color='var(--rose)'} onMouseLeave={e=>e.target.style.color='var(--muted)'}>Terms & Conditions</a></div>
         <div style={{ display: 'flex', alignItems: 'center', gap: '2rem' }}>
           <div className="footer-social">
             <a href="#">Instagram</a>
