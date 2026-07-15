@@ -39,7 +39,13 @@ export default function Footer() {
         </div>
       </footer>
       <div className="footer-bottom">
-        <div className="footer-copy">© 2025 Rose & Glow Hair Salon. All rights reserved. &nbsp;·&nbsp; <Link href="/terms" className="footer-terms">Terms & Conditions</Link></div>
+       <div className="footer-copy">
+  © 2025 Rose & Glow Hair Salon. All rights reserved.
+  &nbsp;·&nbsp;
+  <Link href="/terms" className="footer-terms">Terms & Conditions</Link>
+  &nbsp;·&nbsp;
+  <Link href="/privacy" className="footer-terms">Privacy Policy</Link>
+</div>
         <div style={{ display: 'flex', alignItems: 'center', gap: '2rem' }}>
           <div className="footer-social">
             <a href="#">Instagram</a>
