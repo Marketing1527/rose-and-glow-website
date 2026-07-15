@@ -77,7 +77,7 @@ export default function Contact() {
               <span className="booking-info-icon" style={{fontSize:'1.2rem'}}>✦</span>
               <div>
                 <div style={{fontSize:'0.62rem',letterSpacing:'0.2em',textTransform:'uppercase',color:'var(--gold)',marginBottom:'0.3rem'}}>Hours</div>
-                <div style={{color:'var(--muted)',fontSize:'0.85rem'}}>Mon–Sat: 9am – 7pm</div>
+                <div style={{color:'var(--muted)',fontSize:'0.85rem'}}>Tue–Sat: 10am – 5pm</div>
               </div>
             </div>
             <div className="booking-info-item">
