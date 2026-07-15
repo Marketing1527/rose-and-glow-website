@@ -5,11 +5,26 @@ export default function Contact() {
   const [submitted, setSubmitted] = useState(false)
   const [loading, setLoading] = useState(false)
   const [formData, setFormData] = useState({
-    name: '', email: '', phone: '', service: '', date: '', message: ''
+   time: '', name: '', email: '', phone: '', service: '', date: '', message: ''
   })
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value })
+  }
+
+  const getTimeSlots = () => {
+    const isBalayage = formData.service === 'Balayage'
+    const slots = []
+    const start = 10
+    const end = isBalayage ? 12 : 15
+    for (let h = start; h <= end; h++) {
+      if (isBalayage && h === 12) break
+      slots.push(`${h === 12 ? 12 : h > 12 ? h - 12 : h}:00 ${h >= 12 ? 'PM' : 'AM'}`)
+      if (h !== end - 1 && !(isBalayage && h === 11)) {
+        slots.push(`${h === 12 ? 12 : h > 12 ? h - 12 : h}:30 ${h >= 12 ? 'PM' : 'AM'}`)
+      }
+    }
+    return slots
   }
 
   const handleSubmit = async (e) => {
@@ -99,7 +114,25 @@ export default function Contact() {
                   <option>Styling & Blowout</option>
                 </select>
               </div>
-              <div className="form-row"><label className="form-label">Preferred Date</label><input className="form-input" type="date" name="date" value={formData.date} onChange={handleChange} /></div>
+              <div className="form-row">
+  <label className="form-label">Preferred Date</label>
+  <input className="form-input" type="date" name="date" value={formData.date} onChange={handleChange}
+    min={new Date().toISOString().split('T')[0]}
+  />
+  <p style={{fontSize:'0.7rem',color:'var(--muted)',marginTop:'0.4rem'}}>Open Tuesday – Saturday</p>
+</div>
+<div className="form-row">
+  <label className="form-label">Preferred Time</label>
+  <select className="form-select" name="time" value={formData.time || ''} onChange={handleChange} required>
+    <option value="">Select a time...</option>
+    {getTimeSlots().map(slot => (
+      <option key={slot} value={slot}>{slot}</option>
+    ))}
+  </select>
+  {formData.service === 'Balayage' && (
+    <p style={{fontSize:'0.7rem',color:'var(--rose)',marginTop:'0.4rem'}}>Balayage appointments available 10:00 AM – 12:00 PM only</p>
+  )}
+</div>
               <div className="form-row"><label className="form-label">Message</label><textarea className="form-input" name="message" value={formData.message} onChange={handleChange} placeholder="Tell us about your hair goals..." rows={3} style={{resize:'vertical'}} /></div>
               <button type="submit" className="form-submit" disabled={loading}>
                 {loading ? 'Sending...' : 'Request Appointment'}
