@@ -2,7 +2,6 @@ import './globals.css'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 import AccessibilityBtn from '../components/AccessibilityBtn'
-import Scripts from '../components/Scripts'
 
 export const metadata = {
   title: 'Rose & Glow Hair Salon',
@@ -22,7 +21,6 @@ export default function RootLayout({ children }) {
         </a>
 
         <AccessibilityBtn />
-        <Scripts />
       </body>
     </html>
   )
