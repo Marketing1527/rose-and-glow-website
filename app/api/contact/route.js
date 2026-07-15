@@ -4,7 +4,7 @@ const resend = new Resend(process.env.RESEND_API_KEY)
 
 export async function POST(request) {
   try {
-    const { name, email, phone, service, date, message } = await request.json()
+    const { name, email, phone, service, date, time, message } = await request.json()
 
     const emailTemplate = (title, bodyContent) => `
       <div style="background-color:#fdf8f5;padding:40px 20px;font-family:Georgia,serif;">
@@ -51,7 +51,7 @@ to: ['roseli.peraza09@gmail.com', 'dabdullegacy@gmail.com'],
           <p style="margin:0 0 10px;color:#3a2a2a;font-size:14px;"><strong>Email:</strong> ${email}</p>
           <p style="margin:0 0 10px;color:#3a2a2a;font-size:14px;"><strong>Phone:</strong> ${phone || 'Not provided'}</p>
           <p style="margin:0 0 10px;color:#3a2a2a;font-size:14px;"><strong>Service:</strong> ${service}</p>
-          <p style="margin:0 0 10px;color:#3a2a2a;font-size:14px;"><strong>Preferred Date:</strong> ${date || 'Not specified'}</p>
+          <p style="margin:0 0 10px;color:#3a2a2a;font-size:14px;"><strong>Preferred Date:</strong> ${date || 'Not specified'} at ${time || 'Not specified'}</p>
           <p style="margin:0;color:#3a2a2a;font-size:14px;"><strong>Message:</strong> ${message || 'No message'}</p>
         </div>
         <a href="mailto:${email}" style="display:inline-block;background-color:#7a3030;color:#ffffff;padding:12px 28px;text-decoration:none;font-size:13px;letter-spacing:2px;text-transform:uppercase;border-radius:2px;">Reply to Client</a>
@@ -71,7 +71,7 @@ to: email,
         <div style="background:#fdf8f5;border-left:3px solid #c9a96e;padding:20px 24px;margin-bottom:24px;border-radius:2px;">
           <p style="color:#9a8585;font-size:11px;letter-spacing:2px;text-transform:uppercase;margin:0 0 12px;">Your Request Details</p>
           <p style="margin:0 0 10px;color:#3a2a2a;font-size:14px;"><strong>Service:</strong> ${service}</p>
-          <p style="margin:0 0 10px;color:#3a2a2a;font-size:14px;"><strong>Preferred Date:</strong> ${date || 'Not specified'}</p>
+          <p style="margin:0 0 10<p style="margin:0 0 10px;color:#3a2a2a;font-size:14px;"><strong>Preferred Date:</strong> ${date || 'Not specified'} at ${time || 'Not specified'}</p>
           <p style="margin:0;color:#3a2a2a;font-size:14px;"><strong>Message:</strong> ${message || 'No message'}</p>
         </div>
         <p style="color:#9a8585;font-size:13px;line-height:1.8;">Have questions? We're here for you:</p>
