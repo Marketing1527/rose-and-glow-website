@@ -1,6 +1,7 @@
 import './globals.css'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
+import AccessibilityBtn from '../components/AccessibilityBtn'
 
 export const metadata = {
   title: 'Rose & Glow Hair Salon',
@@ -21,15 +22,7 @@ export default function RootLayout({ children }) {
         </a>
 
         {/* MOBILE ACCESSIBILITY BUTTON */}
-        <button
-          className="accessibility-mobile-btn"
-          aria-label="Accessibility Options"
-          onClick={() => {
-            if(window.UserWay) window.UserWay.open()
-          }}
-        >
-          ♿
-        </button>
+        <AccessibilityBtn />
 
         {/* USERWAY ACCESSIBILITY WIDGET */}
         <script
