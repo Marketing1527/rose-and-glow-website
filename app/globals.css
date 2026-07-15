@@ -336,3 +336,11 @@ footer { background: var(--footer-bg); padding: 4rem 6rem; display: grid; grid-t
   justify-content: center;
   box-shadow: 2px 2px 8px rgba(0,0,0,0.1);
 }
+/* Hide elements on admin pages */
+body:has(.admin-page) nav,
+body:has(.admin-page) footer,
+body:has(.admin-page) .whatsapp-btn,
+body:has(.admin-page) .accessibility-mobile-btn,
+body:has(.admin-page) .footer-bottom {
+  display: none !important;
+}
