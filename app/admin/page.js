@@ -32,7 +32,7 @@ export default function AdminLogin() {
   }
 
   return (
-    <div style={{
+    <div className="admin-page" style={{
       minHeight: '100vh',
       background: 'var(--cream)',
       display: 'flex',
