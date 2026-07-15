@@ -7,6 +7,7 @@ import Link from 'next/link'
 export default function Dashboard() {
   const [appointments, setAppointments] = useState([])
   const [subscribers, setSubscribers] = useState([])
+  const [adminUsers, setAdminUsers] = useState([])
   const [loading, setLoading] = useState(true)
   const [activeTab, setActiveTab] = useState('appointments')
   const [selectedDate, setSelectedDate] = useState(new Date())
@@ -14,6 +15,17 @@ export default function Dashboard() {
   const [campaignBody, setCampaignBody] = useState('')
   const [sending, setSending] = useState(false)
   const [sent, setSent] = useState(false)
+
+  // Settings state
+  const [newEmail, setNewEmail] = useState('')
+  const [newPassword, setNewPassword] = useState('')
+  const [addingUser, setAddingUser] = useState(false)
+  const [userAdded, setUserAdded] = useState(false)
+  const [editingUser, setEditingUser] = useState(null)
+  const [editEmail, setEditEmail] = useState('')
+  const [editPassword, setEditPassword] = useState('')
+  const [settingsMsg, setSettingsMsg] = useState('')
+
   const router = useRouter()
 
   useEffect(() => {
@@ -22,14 +34,17 @@ export default function Dashboard() {
 
   const fetchData = async () => {
     setLoading(true)
-    const [apptRes, subRes] = await Promise.all([
+    const [apptRes, subRes, usersRes] = await Promise.all([
       fetch('/api/admin/appointments'),
-      fetch('/api/admin/subscribers')
+      fetch('/api/admin/subscribers'),
+      fetch('/api/admin/settings')
     ])
     const apptData = await apptRes.json()
     const subData = await subRes.json()
+    const usersData = await usersRes.json()
     setAppointments(apptData.appointments || [])
     setSubscribers(subData.subscribers || [])
+    setAdminUsers(usersData.users || [])
     setLoading(false)
   }
 
@@ -54,6 +69,51 @@ export default function Dashboard() {
     setCampaignSubject('')
     setCampaignBody('')
     setTimeout(() => setSent(false), 3000)
+  }
+
+  const addUser = async () => {
+    setAddingUser(true)
+    const res = await fetch('/api/admin/settings', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email: newEmail, password: newPassword })
+    })
+    const data = await res.json()
+    if (data.success) {
+      setUserAdded(true)
+      setNewEmail('')
+      setNewPassword('')
+      fetchData()
+      setTimeout(() => setUserAdded(false), 3000)
+    }
+    setAddingUser(false)
+  }
+
+  const updateUser = async (id) => {
+    const res = await fetch('/api/admin/settings', {
+      method: 'PATCH',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ id, email: editEmail, password: editPassword })
+    })
+    const data = await res.json()
+    if (data.success) {
+      setSettingsMsg('Updated successfully!')
+      setEditingUser(null)
+      setEditEmail('')
+      setEditPassword('')
+      fetchData()
+      setTimeout(() => setSettingsMsg(''), 3000)
+    }
+  }
+
+  const deleteUser = async (id) => {
+    if (!confirm('Are you sure you want to remove this admin user?')) return
+    await fetch('/api/admin/settings', {
+      method: 'DELETE',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ id })
+    })
+    fetchData()
   }
 
   const getDaysInMonth = (date) => {
@@ -83,6 +143,31 @@ export default function Dashboard() {
   const pendingCount = appointments.filter(a => a.status === 'pending').length
   const confirmedCount = appointments.filter(a => a.status === 'confirmed').length
 
+  const inputStyle = {
+    width: '100%',
+    border: 'none',
+    borderBottom: '1px solid #f5e8e3',
+    padding: '0.6rem 0',
+    fontFamily: 'Jost, sans-serif',
+    fontSize: '0.85rem',
+    color: '#3a2a2a',
+    background: 'transparent',
+    outline: 'none',
+    marginBottom: '1rem'
+  }
+
+  const btnStyle = (color = '#7a3030') => ({
+    fontSize: '0.72rem',
+    background: color,
+    color: 'white',
+    border: 'none',
+    padding: '0.5rem 1.2rem',
+    cursor: 'pointer',
+    borderRadius: '2px',
+    fontFamily: 'Jost, sans-serif',
+    letterSpacing: '0.1em'
+  })
+
   return (
     <div style={{ minHeight: '100vh', background: '#faf8f6', fontFamily: 'Jost, sans-serif' }}>
 
@@ -94,7 +179,7 @@ export default function Dashboard() {
         </div>
         <div style={{ display: 'flex', gap: '1rem', alignItems: 'center' }}>
           <Link href="/" style={{ fontSize: '0.75rem', color: '#9a8585', textDecoration: 'none' }}>View Site</Link>
-          <button onClick={() => router.push('/admin')} style={{ fontSize: '0.75rem', background: '#7a3030', color: 'white', border: 'none', padding: '0.4rem 1rem', cursor: 'pointer', borderRadius: '2px' }}>Sign Out</button>
+          <button onClick={() => router.push('/admin')} style={btnStyle()}>Sign Out</button>
         </div>
       </nav>
 
@@ -117,7 +202,7 @@ export default function Dashboard() {
 
         {/* TABS */}
         <div style={{ display: 'flex', gap: '0', marginBottom: '1.5rem', borderBottom: '1px solid #f5e8e3' }}>
-          {['appointments', 'calendar', 'subscribers', 'campaigns'].map(tab => (
+          {['appointments', 'calendar', 'subscribers', 'campaigns', 'settings'].map(tab => (
             <button key={tab} onClick={() => setActiveTab(tab)} style={{
               padding: '0.8rem 1.5rem',
               background: 'none',
@@ -158,12 +243,12 @@ export default function Dashboard() {
                       </span>
                       {apt.status === 'pending' && (
                         <>
-                          <button onClick={() => updateStatus(apt.id, 'confirmed')} style={{ fontSize: '0.72rem', background: '#4caf50', color: 'white', border: 'none', padding: '0.4rem 1rem', cursor: 'pointer', borderRadius: '2px' }}>Confirm</button>
-                          <button onClick={() => updateStatus(apt.id, 'cancelled')} style={{ fontSize: '0.72rem', background: '#f44336', color: 'white', border: 'none', padding: '0.4rem 1rem', cursor: 'pointer', borderRadius: '2px' }}>Cancel</button>
+                          <button onClick={() => updateStatus(apt.id, 'confirmed')} style={btnStyle('#4caf50')}>Confirm</button>
+                          <button onClick={() => updateStatus(apt.id, 'cancelled')} style={btnStyle('#f44336')}>Cancel</button>
                         </>
                       )}
                       {apt.status === 'confirmed' && (
-                        <button onClick={() => updateStatus(apt.id, 'cancelled')} style={{ fontSize: '0.72rem', background: '#f44336', color: 'white', border: 'none', padding: '0.4rem 1rem', cursor: 'pointer', borderRadius: '2px' }}>Cancel</button>
+                        <button onClick={() => updateStatus(apt.id, 'cancelled')} style={btnStyle('#f44336')}>Cancel</button>
                       )}
                     </div>
                   </div>
@@ -181,11 +266,10 @@ export default function Dashboard() {
                 {selectedDate.toLocaleString('default', { month: 'long', year: 'numeric' })}
               </h2>
               <div style={{ display: 'flex', gap: '0.5rem' }}>
-                <button onClick={() => setSelectedDate(new Date(selectedDate.getFullYear(), selectedDate.getMonth() - 1))} style={{ background: '#f5e8e3', border: 'none', padding: '0.5rem 1rem', cursor: 'pointer', borderRadius: '2px', color: '#7a3030' }}>← Prev</button>
-                <button onClick={() => setSelectedDate(new Date(selectedDate.getFullYear(), selectedDate.getMonth() + 1))} style={{ background: '#f5e8e3', border: 'none', padding: '0.5rem 1rem', cursor: 'pointer', borderRadius: '2px', color: '#7a3030' }}>Next →</button>
+                <button onClick={() => setSelectedDate(new Date(selectedDate.getFullYear(), selectedDate.getMonth() - 1))} style={btnStyle('#f5e8e3')}>← Prev</button>
+                <button onClick={() => setSelectedDate(new Date(selectedDate.getFullYear(), selectedDate.getMonth() + 1))} style={btnStyle('#f5e8e3')}>Next →</button>
               </div>
             </div>
-
             <div style={{ background: 'white', borderRadius: '4px', overflow: 'hidden', boxShadow: '0 2px 8px rgba(0,0,0,0.04)' }}>
               <div style={{ display: 'grid', gridTemplateColumns: 'repeat(7, 1fr)', background: '#7a3030' }}>
                 {['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'].map(day => (
@@ -201,7 +285,7 @@ export default function Dashboard() {
                   const dayApts = getAppointmentsForDay(day)
                   const isToday = new Date().getDate() === day && new Date().getMonth() === selectedDate.getMonth() && new Date().getFullYear() === selectedDate.getFullYear()
                   return (
-                    <div key={day} style={{ background: 'white', minHeight: '80px', padding: '0.5rem', position: 'relative' }}>
+                    <div key={day} style={{ background: 'white', minHeight: '80px', padding: '0.5rem' }}>
                       <div style={{ fontSize: '0.8rem', fontWeight: isToday ? 'bold' : 'normal', color: isToday ? '#7a3030' : '#3a2a2a', marginBottom: '0.3rem' }}>{day}</div>
                       {dayApts.map(apt => (
                         <div key={apt.id} style={{ fontSize: '0.65rem', background: `${statusColor(apt.status)}20`, color: statusColor(apt.status), padding: '0.2rem 0.4rem', borderRadius: '2px', marginBottom: '0.2rem', overflow: 'hidden', whiteSpace: 'nowrap', textOverflow: 'ellipsis' }}>
@@ -238,7 +322,7 @@ export default function Dashboard() {
                       <td style={{ padding: '0.8rem 1rem', fontSize: '0.85rem', color: '#3a2a2a' }}>{sub.email}</td>
                       <td style={{ padding: '0.8rem 1rem', fontSize: '0.8rem', color: '#9a8585' }}>{new Date(sub.created_at).toLocaleDateString()}</td>
                       <td style={{ padding: '0.8rem 1rem' }}>
-                        <span style={{ fontSize: '0.65rem', background: sub.subscribed ? '#4caf5020' : '#f4433620', color: sub.subscribed ? '#4caf50' : '#f44336', padding: '0.2rem 0.6rem', borderRadius: '20px', letterSpacing: '0.1em', textTransform: 'uppercase' }}>
+                        <span style={{ fontSize: '0.65rem', background: sub.subscribed ? '#4caf5020' : '#f4433620', color: sub.subscribed ? '#4caf50' : '#f44336', padding: '0.2rem 0.6rem', borderRadius: '20px' }}>
                           {sub.subscribed ? 'Active' : 'Unsubscribed'}
                         </span>
                       </td>
@@ -256,19 +340,78 @@ export default function Dashboard() {
             <h2 style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: '1.8rem', fontWeight: 300, color: '#1a1210', marginBottom: '1rem' }}>Email Campaign</h2>
             <div style={{ background: 'white', padding: '2rem', borderRadius: '4px', boxShadow: '0 2px 8px rgba(0,0,0,0.04)', maxWidth: '700px' }}>
               <p style={{ fontSize: '0.8rem', color: '#9a8585', marginBottom: '1.5rem' }}>Send an email to all {subscribers.filter(s => s.subscribed).length} active subscribers.</p>
-              <div className="form-row">
-                <label className="form-label">Subject</label>
-                <input className="form-input" type="text" value={campaignSubject} onChange={e => setCampaignSubject(e.target.value)} placeholder="e.g. Summer Special at Rose & Glow!" />
+              <div>
+                <label style={{ fontSize: '0.62rem', letterSpacing: '0.2em', textTransform: 'uppercase', color: '#9a8585', display: 'block', marginBottom: '0.4rem' }}>Subject</label>
+                <input style={inputStyle} type="text" value={campaignSubject} onChange={e => setCampaignSubject(e.target.value)} placeholder="e.g. Summer Special at Rose & Glow!" />
               </div>
-              <div className="form-row">
-                <label className="form-label">Message</label>
-                <textarea className="form-input" rows={8} value={campaignBody} onChange={e => setCampaignBody(e.target.value)} placeholder="Write your email message here..." style={{ resize: 'vertical' }} />
+              <div>
+                <label style={{ fontSize: '0.62rem', letterSpacing: '0.2em', textTransform: 'uppercase', color: '#9a8585', display: 'block', marginBottom: '0.4rem' }}>Message</label>
+                <textarea style={{ ...inputStyle, resize: 'vertical', height: '200px' }} value={campaignBody} onChange={e => setCampaignBody(e.target.value)} placeholder="Write your email message here..." />
               </div>
               {sent && <p style={{ color: '#4caf50', fontSize: '0.85rem', marginBottom: '1rem' }}>✓ Campaign sent successfully!</p>}
-              <button onClick={sendCampaign} disabled={sending || !campaignSubject || !campaignBody} className="form-submit">
+              <button onClick={sendCampaign} disabled={sending || !campaignSubject || !campaignBody} style={{ ...btnStyle(), width: '100%', padding: '1rem', letterSpacing: '0.2em' }}>
                 {sending ? 'Sending...' : `Send to ${subscribers.filter(s => s.subscribed).length} Subscribers`}
               </button>
             </div>
+          </div>
+        )}
+
+        {/* SETTINGS TAB */}
+        {!loading && activeTab === 'settings' && (
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '2rem' }}>
+
+            {/* MANAGE ADMINS */}
+            <div>
+              <h2 style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: '1.8rem', fontWeight: 300, color: '#1a1210', marginBottom: '1rem' }}>Admin Users</h2>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+                {adminUsers.map(user => (
+                  <div key={user.id} style={{ background: 'white', padding: '1.2rem 1.5rem', borderRadius: '4px', boxShadow: '0 2px 8px rgba(0,0,0,0.04)', borderLeft: '3px solid #c9a96e' }}>
+                    {editingUser === user.id ? (
+                      <div>
+                        <input style={inputStyle} type="email" value={editEmail} onChange={e => setEditEmail(e.target.value)} placeholder="New email" />
+                        <input style={inputStyle} type="password" value={editPassword} onChange={e => setEditPassword(e.target.value)} placeholder="New password" />
+                        <div style={{ display: 'flex', gap: '0.5rem' }}>
+                          <button onClick={() => updateUser(user.id)} style={btnStyle('#4caf50')}>Save</button>
+                          <button onClick={() => { setEditingUser(null); setEditEmail(''); setEditPassword('') }} style={btnStyle('#9a8585')}>Cancel</button>
+                        </div>
+                      </div>
+                    ) : (
+                      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                        <div>
+                          <div style={{ fontSize: '0.85rem', color: '#3a2a2a', marginBottom: '0.2rem' }}>{user.email}</div>
+                          <div style={{ fontSize: '0.72rem', color: '#9a8585' }}>Added {new Date(user.created_at).toLocaleDateString()}</div>
+                        </div>
+                        <div style={{ display: 'flex', gap: '0.5rem' }}>
+                          <button onClick={() => { setEditingUser(user.id); setEditEmail(user.email) }} style={btnStyle('#c9a96e')}>Edit</button>
+                          <button onClick={() => deleteUser(user.id)} style={btnStyle('#f44336')}>Remove</button>
+                        </div>
+                      </div>
+                    )}
+                  </div>
+                ))}
+                {settingsMsg && <p style={{ color: '#4caf50', fontSize: '0.85rem' }}>✓ {settingsMsg}</p>}
+              </div>
+            </div>
+
+            {/* ADD NEW ADMIN */}
+            <div>
+              <h2 style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: '1.8rem', fontWeight: 300, color: '#1a1210', marginBottom: '1rem' }}>Add New Admin</h2>
+              <div style={{ background: 'white', padding: '2rem', borderRadius: '4px', boxShadow: '0 2px 8px rgba(0,0,0,0.04)' }}>
+                <div>
+                  <label style={{ fontSize: '0.62rem', letterSpacing: '0.2em', textTransform: 'uppercase', color: '#9a8585', display: 'block', marginBottom: '0.4rem' }}>Email</label>
+                  <input style={inputStyle} type="email" value={newEmail} onChange={e => setNewEmail(e.target.value)} placeholder="admin@email.com" />
+                </div>
+                <div>
+                  <label style={{ fontSize: '0.62rem', letterSpacing: '0.2em', textTransform: 'uppercase', color: '#9a8585', display: 'block', marginBottom: '0.4rem' }}>Password</label>
+                  <input style={inputStyle} type="password" value={newPassword} onChange={e => setNewPassword(e.target.value)} placeholder="Create a password" />
+                </div>
+                {userAdded && <p style={{ color: '#4caf50', fontSize: '0.85rem', marginBottom: '1rem' }}>✓ Admin user added!</p>}
+                <button onClick={addUser} disabled={addingUser || !newEmail || !newPassword} style={{ ...btnStyle(), width: '100%', padding: '1rem', letterSpacing: '0.2em' }}>
+                  {addingUser ? 'Adding...' : 'Add Admin User'}
+                </button>
+              </div>
+            </div>
+
           </div>
         )}
 
