@@ -6,6 +6,10 @@ import AccessibilityBtn from '../components/AccessibilityBtn'
 export const metadata = {
   title: 'Rose & Glow Hair Salon',
   description: 'Luxury hair salon specializing in balayage, custom color, haircuts, restorative treatments, and luxury head spa services.',
+  icons: {
+    icon: '/favicon.png',
+    apple: '/favicon.png',
+  },
 }
 
 export default function RootLayout({ children }) {
