@@ -284,3 +284,5 @@ footer { background: var(--footer-bg); padding: 4rem 6rem; display: grid; grid-t
 }
 .whatsapp-btn { position: fixed; bottom: 1.5rem; right: 1.5rem; width: 52px; height: 52px; background-color: #25D366; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 12px rgba(0,0,0,0.15); z-index: 999; transition: transform 0.2s; }
 .whatsapp-btn:hover { transform: scale(1.1); }
+.footer-terms { color: var(--muted); text-decoration: none; transition: color 0.3s; }
+.footer-terms:hover { color: var(--rose); }
