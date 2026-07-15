@@ -278,6 +278,15 @@ footer { background: var(--footer-bg); padding: 4rem 6rem; display: grid; grid-t
   transform: translateY(-50%) !important;
   position: fixed !important;
 }
+#userwayAccessibilityIcon,
+[id*="userway"],
+[class*="userway"] {
+  display: none !important;
+}
+
+.accessibility-mobile-btn {
+  display: flex !important;
+}
 @media(max-width: 480px) {
   .hero-headline { font-size: 2rem; }
   footer { grid-template-columns: 1fr; }
@@ -308,4 +317,22 @@ footer { background: var(--footer-bg); padding: 4rem 6rem; display: grid; grid-t
   right: auto !important;
   top: auto !important;
   position: fixed !important;
+}
+.accessibility-mobile-btn {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  width: 36px;
+  height: 36px;
+  background: var(--peach);
+  border: none;
+  border-radius: 0 8px 8px 0;
+  font-size: 1.2rem;
+  cursor: pointer;
+  z-index: 999;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 2px 2px 8px rgba(0,0,0,0.1);
 }
