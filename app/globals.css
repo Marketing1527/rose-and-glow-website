@@ -268,7 +268,15 @@ footer { background: var(--footer-bg); padding: 4rem 6rem; display: grid; grid-t
   .footer-social { justify-content: center; }
   .footer-credit { margin-top: 0.3rem; }
 }
-
+#userwayAccessibilityIcon,
+[id*="userway"],
+[class*="userway"] {
+  bottom: 1.5rem !important;
+  left: 1.5rem !important;
+  right: auto !important;
+  top: auto !important;
+  position: fixed !important;
+}
 @media(max-width: 480px) {
   .hero-headline { font-size: 2rem; }
   footer { grid-template-columns: 1fr; }
