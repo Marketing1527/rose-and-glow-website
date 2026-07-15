@@ -21,9 +21,9 @@ export default function RootLayout({ children }) {
         </a>
 
         {/* USERWAY ACCESSIBILITY WIDGET */}
-        <script
+       <script
           dangerouslySetInnerHTML={{
-            __html: `(function(d){var s = d.createElement("script");s.setAttribute("data-account", "YOUR_USERWAY_ID");s.setAttribute("src", "https://cdn.userway.org/widget.js");(d.body || d.head).appendChild(s);})(document)`
+            __html: `(function(d){var s = d.createElement("script");s.setAttribute("data-account", "YOUR_USERWAY_ID");s.setAttribute("src", "https://cdn.userway.org/widget.js");s.setAttribute("data-position", "3");s.setAttribute("data-color", "#f0d5c8");s.setAttribute("data-size", "medium");(d.body || d.head).appendChild(s);})(document)`
           }}
         />
 
