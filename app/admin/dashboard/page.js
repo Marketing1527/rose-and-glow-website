@@ -84,8 +84,7 @@ export default function Dashboard() {
   const confirmedCount = appointments.filter(a => a.status === 'confirmed').length
 
   return (
-    <div style={{ minHeight: '100vh', background: '#faf8f6', fontFamily: 'Jost, sans-serif' }}>
-
+    <div className="admin-page" style={{ minHeight: '100vh', background: '#faf8f6', fontFamily: 'Jost, sans-serif' }}>
       {/* ADMIN NAV */}
       <nav style={{ background: 'white', padding: '0.8rem 2rem', display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderBottom: '1px solid #f5e8e3', position: 'sticky', top: 0, zIndex: 100 }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
